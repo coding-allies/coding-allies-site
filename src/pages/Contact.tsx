@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Box, TextField, MenuItem } from '@material-ui/core';
+import './Contact.css';
 
 class Contact extends Component {
 
@@ -54,11 +55,12 @@ class Contact extends Component {
   render() {
     return (
       <Box>
-        <h5>Contact Us</h5>
+        <h1>Contact Us</h1>
         <p>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
         <form>
           <TextField
             id="outlined-select-topic"
+            className="text-field"
             select
             label="Select"
             value={this.state.topic}
@@ -76,6 +78,7 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
+            className="text-field"
             label="First Name"
             // defaultValue=""
             value={this.state.firstName}
@@ -85,6 +88,7 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
+            className="text"
             label="Last Name"
             // defaultValue=""
             value={this.state.lastName}
@@ -95,6 +99,7 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
+            className="text-field"
             label="Email"
             // defaultValue=""
             value={this.state.email}
@@ -105,6 +110,7 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
+            className="text-field"
             label="Message"
             // defaultValue=""
             value={this.state.message}
