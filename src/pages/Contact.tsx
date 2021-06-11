@@ -60,7 +60,6 @@ class Contact extends Component {
         <form>
           <TextField
             id="outlined-select-topic"
-            className="text-field"
             select
             label="Select"
             value={this.state.topic}
@@ -78,7 +77,6 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
-            className="text-field"
             label="First Name"
             // defaultValue=""
             value={this.state.firstName}
@@ -88,7 +86,6 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
-            className="text"
             label="Last Name"
             // defaultValue=""
             value={this.state.lastName}
@@ -99,7 +96,6 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
-            className="text-field"
             label="Email"
             // defaultValue=""
             value={this.state.email}
@@ -110,7 +106,6 @@ class Contact extends Component {
           <TextField
             required
             id="outlined-required"
-            className="text-field"
             label="Message"
             // defaultValue=""
             value={this.state.message}
