@@ -28,14 +28,12 @@ class PageRouter extends React.Component {
         return (
             <Router history={history}>
                 <Switch>
-                    <Switch>
-                        <StyledRoute exact path="/" component={Home} />
-                        <StyledRoute path="/about" component={About} />
-                        <StyledRoute path="/events" component={Events} />
-                        <StyledRoute path="/companies" component={Partners} />
-                        <StyledRoute path="/comunity" component={Comunity} />
-                        <StyledRoute path="/contact" component={Contact} />
-                    </Switch>
+                    <StyledRoute exact path="/" component={Home} />
+                    <StyledRoute path="/about" component={About} />
+                    <StyledRoute path="/events" component={Events} />
+                    <StyledRoute path="/companies" component={Partners} />
+                    <StyledRoute path="/comunity" component={Comunity} />
+                    <StyledRoute path="/contact" component={Contact} />
                 </Switch>
             </Router>
         );

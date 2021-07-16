@@ -1,8 +1,9 @@
 import {
   Link
 } from "react-router-dom";
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import logo from "../assets/ca_logo.png"
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -18,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     flexWrap: 'wrap',
   },
-  toolbarTitle: {
+  logo: {
+    width: '80px',
     flexGrow: 1,
   },
   link: {
@@ -38,19 +40,12 @@ const Header = () => {
       className={classes.appBar}
     >
       <Toolbar className={classes.toolbar}>
-        <Typography
-          variant="h6"
-          color="inherit"
-          noWrap
-          className={classes.toolbarTitle}
+        <Link
+          to="/"
+          className={classes.link}
         >
-          <Link
-            to="/"
-            className={classes.link}
-          >
-            CODING ALLIES WEBSITE
-         </Link>
-        </Typography>
+          <img src={logo} className={classes.logo} alt="Coding Allies Logo" />
+        </Link>
         <nav>
           <Link
             to="/about"

@@ -38,6 +38,11 @@ Thank you for being part of our team 💐!
 
 In the project directory, you can run:
 
+## Node.js - Version 10.x
+
+1. Visit [Node.js](https://nodejs.org/en/download/) and download and run the Windows installer. No need to check "Automatically install the necessary modules".
+1. You can check your current Node.js version with by running `node -v` in your command line
+
 ### `npm install`
 
 Installs all npm packages needed for the application to work.
