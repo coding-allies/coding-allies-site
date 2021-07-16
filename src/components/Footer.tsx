@@ -1,5 +1,6 @@
-import { Grid, Container, Typography, Link } from '@material-ui/core';
+import { Button, Grid, Input, Container, Typography, Link, Icon, Paper, CardMedia } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import logo from "logo.png"
 
 const useStyles = makeStyles((theme) => ({
 	footer: {
@@ -15,25 +16,62 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const Footer = () => {
+const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
+
+function ButtonStyled() {
+	const classes = useStyles();
+	return <Button className={classes.footer}>
+		Test Styled Button
+	</Button>
+}
+
+function Footer() {
 	const classes = useStyles();
 	return (
 		<Container component="footer" className={classes.footer}>
 			<Grid container spacing={2}>
-				<Grid item xs={8}>
-					<Typography variant="h6" gutterBottom>
-						CODING ALLIES TM
-				</Typography>
+				<Grid item xs={4}>
+					<text>
+						Sign up for event updates
+					</text>
+					<div>
+						<input
+							type="email"
+							placeholder="Email address"
+							color="primary"
+							style={{ borderRadius: 15 }}>
+						</input>
+						<Button
+							size="small"
+							variant="contained"
+							color="primary"
+							style={{ borderRadius: 15 }}>
+							Sign up
+						</Button>
+					</div>
 				</Grid>
-				<Grid item xs={2}>
-					<Link href="#" variant="subtitle1">
+				<Grid item xs={4}>
+						<img src={logo} alt="Coding Allies Logo" />
+					<Typography align="center">
+						&copy; Coding Allies {new Date().getFullYear()}{"."}
+					</Typography>
+				</Grid>
+				<Grid item xs={4}>
+					<text>
+						Follow us on:
+					</text>
+					<Link href="#" color="primary" variant="subtitle1">
 						Facebook
-				</Link>
-				</Grid>
-				<Grid item xs={2}>
+					</Link>
+					<Link href="#" onClick={preventDefault} variant="subtitle1">
+						Twitter
+					</Link>
 					<Link href="#" variant="subtitle1">
 						Insta
-				</Link>
+					</Link>
+					<Link href="#" variant="subtitle1">
+						LinkedIn
+					</Link>
 				</Grid>
 			</Grid>
 		</Container>
