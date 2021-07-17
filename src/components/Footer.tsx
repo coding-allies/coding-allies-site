@@ -1,35 +1,34 @@
 import { Button, Grid, Input, Container, Typography, Link, Icon, Paper, CardMedia } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
 import logo from "../assets/ca_single_flower_logo.png"
+import { FormatAlignCenter } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
-	footer: {
-		borderTop: `1px solid ${theme.palette.divider}`,
-		marginTop: theme.spacing(8),
-		paddingTop: theme.spacing(3),
-		paddingBottom: theme.spacing(3),
-		position: 'absolute',
-		left: 0,
-		bottom: 0,
-		height: '100px',
-		width: '100%',
-	},
+  footer: {
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    height: '100px',
+    width: '100%',
+  },
 }));
 
 const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
-
-function ButtonStyled() {
-	const classes = useStyles();
-	return <Button className={classes.footer}>
-		Test Styled Button
-	</Button>
-}
 
 function Footer() {
   const classes = useStyles();
   return (
     <Container component="footer" className={classes.footer}>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} alignContent="center" alignItems="center" justify="center">
         <Grid item xs={4}>
           <text>
             Sign up for event updates
@@ -39,19 +38,20 @@ function Footer() {
               type="email"
               placeholder="Email address"
               color="primary"
-              style={{ borderRadius: 15 }}>
+              style={{borderRadius: 15, color: "primary", padding: '0px 15px'}}>
             </input>
             <Button
+              href="#"
               size="small"
               variant="contained"
               color="primary"
-              style={{ borderRadius: 15 }}>
+              style={{fontSize: 10, textTransform: 'none', borderRadius: 15, padding: '2px 15px', marginLeft: 10}}>
               Sign up
 						</Button>
           </div>
         </Grid>
         <Grid item xs={4}>
-          <img src={logo} width={50} alt="Coding Allies Logo" />
+          <img src={logo} width={30} alt="Coding Allies Logo" />
           <Typography align="center">
             &copy; Coding Allies {new Date().getFullYear()}{"."}
           </Typography>
@@ -60,18 +60,18 @@ function Footer() {
           <text>
             Follow us on:
 					</text>
-          <Link href="#" color="primary" variant="subtitle1">
-            Facebook
-					</Link>
+          <Link href="#" color="primary">
+            <FacebookIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
+          </Link>
           <Link href="#" onClick={preventDefault} variant="subtitle1">
-            Twitter
-					</Link>
+            <TwitterIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
+          </Link>
+          <Link href="#">
+            <InstagramIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
+          </Link>
           <Link href="#" variant="subtitle1">
-            Insta
-					</Link>
-          <Link href="#" variant="subtitle1">
-            LinkedIn
-					</Link>
+            <LinkedInIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
+          </Link>
         </Grid>
       </Grid>
     </Container>
