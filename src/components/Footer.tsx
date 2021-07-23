@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: theme.spacing(8),
 		paddingTop: theme.spacing(3),
 		paddingBottom: theme.spacing(3),
-		position: 'absolute',
+		position: 'relative',
 		left: 0,
 		bottom: 0,
 		height: '100px',
