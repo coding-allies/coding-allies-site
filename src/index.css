@@ -15,3 +15,6 @@ code {
 body {
   margin: 20px;
 }
+.about{
+  background-image:'../assets/img1.png';
+}
