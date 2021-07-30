@@ -50,26 +50,26 @@ function Footer() {
 						</Button>
           </div>
         </Grid>
-        <Grid item xs={4}>
-          <img src={logo} width={30} alt="Coding Allies Logo" />
+        <Grid container item xs={4} direction="column" alignItems="center" justify="center">
+          <img src={logo} width={45} alt="Coding Allies Logo" />
           <Typography align="center">
             &copy; Coding Allies {new Date().getFullYear()}{"."}
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid container item xs={4} direction="row" alignItems="center" justify="center">
           <text>
             Follow us on:
 					</text>
-          <Link href="#" color="primary">
+          <Link href="https://www.facebook.com/groups/713361402552708">
             <FacebookIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
           </Link>
-          <Link href="#" onClick={preventDefault} variant="subtitle1">
+          <Link href="https://twitter.com/codingallies?lang=en">
             <TwitterIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
           </Link>
-          <Link href="#">
+          <Link href="https://www.instagram.com/codingallies/">
             <InstagramIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
           </Link>
-          <Link href="#" variant="subtitle1">
+          <Link href="https://www.linkedin.com/company/coding-allies/">
             <LinkedInIcon style={{padding: "3px", border: "solid 1px", borderRadius: "50%", marginInline: 5, fill: "initial"}}/>
           </Link>
         </Grid>
