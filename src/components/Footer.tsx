@@ -3,12 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	footer: {
-		position: 'absolute',
-		width: '1520px',
-		height: '103px',
-		left: '0px',
-		top: '2198px',
-		background: '#FFFFFF'
+		paddingTop: theme.spacing(3),
+		position: 'relative',
+		left: 0,
+		bottom: 0,
+		height: '80px',
+		width: '100%',
 	},
 }));
 
