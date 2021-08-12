@@ -8,21 +8,22 @@ import {
 class Home extends Component {
   render() {
     return (
-      <Grid container justify="center" alignItems="center">
-        <div style={{position: 'relative', width:'100%'}}>
-          <img style={{width: '100%'}} src={whiteBackground} alt="White Background Image"/>
-          <nav style={{position: 'absolute', top: '125px', left: '188px'}}>
-            <Typography variant="h2" gutterBottom>
+      <Grid container justify="center" alignItems="center" style={{position: 'absolute', width: '1520px', height: '651px', left: '0px', backgroundImage: 'url('+whiteBackground+')'}}>
+        <div>
+            <Typography style={{position: 'absolute', left: '10%', right: '0%', top: '11%', fontSize: '40px', lineHeight: '54px', letterSpacing: '-0.015em',
+            fontFamily: 'Montserrat', fontStyle: 'normal', textAlign: 'left', height: '74px', width: '569px', borderRadius: 'nullpx'}} variant="h2" gutterBottom>
               Women and gender<br/>minorities in tech.<br/>
               Empower. Prepare. <br/>Advance. Share.
             </Typography>
-            <Button href="#contained-buttons" variant="contained" color="primary" style={{fontSize:'20px'}}>
+            <Button style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '8px 22px',
+            position: 'absolute', left: '11%', right: '77.98%', top: '50.06%', bottom: '40.33%', background: '#90AE49', borderRadius: '50px'}} href="jointoday" variant="contained" color="primary">
               Join Today
             </Button>
-          </nav>
-        </div>
-        <nav>
-            <Typography variant="h5" gutterBottom style={{position: 'relative', width: '100%', textAlignLast: 'center'}}>
+            </div>
+        <nav style={{position: 'absolute', width: '1520px', height: '871px', left: '0px', top: '656px', background: '#FFFFFF'}}>
+            <Typography variant="h5" gutterBottom style={{position: 'absolute', width: '1392px', height: '100px', left: '80px', 
+            top: '56px', fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 'normal', fontSize: '36px', lineHeight: '50px',
+            letterSpacing: '-0.015em', color: 'rgba(0, 0, 0, 0.8)'}}>
               We believe women and gender minorities should have a safe space and<br/>
               support system where they can foster their skills and careers in tech. We<br/>
               celebrate allyship and a community that is based on helping each other grow<br/>
