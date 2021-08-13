@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import { Box, TextField, MenuItem } from '@material-ui/core';
+import axios from 'axios';
 import './Contact.css';
+// install axios and query-string
 
 class Contact extends Component {
-
-  state = {
-    topic: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
-  }
 
   topics = [
     {
@@ -27,29 +21,36 @@ class Contact extends Component {
     },
   ];
 
-  handleTopicInput = (e:any) => {
-    this.setState({ topic: e.target.value });
-  };
-  handleFirstNameInput = (e:any) => {
-    this.setState({ firstName: e.target.value });
-  };
-  handleLastNameInput = (e:any) => {
-    this.setState({ lastName: e.target.value });
-  };
-  handleEmailInput = (e:any) => {
-    this.setState({ email: e.target.value });
-  };
-  handleMessageInput = (e:any) => {
-    this.setState({ message: e.target.value });
+  handleChange = (e:any) => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  logInfo = (e:any) => {
+  myRequest = (url:any) => {
+    let response;
+    try {
+      response = axios.post(url)
+    } catch (e) {
+      response = e;
+    }
+    console.log(response)
+  }
+
+  handleSubmit = (e:any) => {
+    const data = {
+      ...this.state
+    }
+    console.log(data)
+    const id = "1FAIpQLScb6beAenKEkxKCOX8nlOX1VkB3moEFN7COcmGASIQIKEpFpg";
     e.preventDefault();
-    console.log(this.state.topic);
-    console.log(this.state.firstName);
-    console.log(this.state.lastName);
-    console.log(this.state.email);
-    console.log(this.state.message);
+    const formUrl = "https://docs.google.com/forms/d/e/"+id+"/formResponse";
+    const queryString = require('query-string')
+    const q = queryString.stringifyUrl({
+      url: formUrl,
+      query: data
+    })
+    console.log(q)
+    this.myRequest(q)
+    e.target.reset()
   };
 
   render() {
@@ -57,15 +58,14 @@ class Contact extends Component {
       <Box>
         <h1>Contact Us</h1>
         <p>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <TextField
-            id="outlined-select-topic"
+            id="topic"
             select
             label="Select"
-            value={this.state.topic}
-            onChange={this.handleTopicInput}
-            // helperText="Please select your topic"
+            onChange={this.handleChange}
             variant="outlined"
+            name="entry.1519230818"
           >
             {this.topics.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -76,46 +76,42 @@ class Contact extends Component {
           <br></br>
           <TextField
             required
-            id="outlined-required"
+            id="firstName"
             label="First Name"
-            // defaultValue=""
-            value={this.state.firstName}
-            onChange={this.handleFirstNameInput}
+            onChange={this.handleChange}
             variant="outlined"
+            name="entry.1466030423"
           />
           <TextField
             required
-            id="outlined-required"
+            id="lastName"
             label="Last Name"
-            // defaultValue=""
-            value={this.state.lastName}
-            onChange={this.handleLastNameInput}
+            onChange={this.handleChange}
             variant="outlined"
+            name="entry.363139444"
           />
           <br></br>
           <TextField
             required
-            id="outlined-required"
+            id="email"
             label="Email"
-            // defaultValue=""
-            value={this.state.email}
-            onChange={this.handleEmailInput}
+            onChange={this.handleChange}
             variant="outlined"
+            name="entry.1540871534"
           />
           <br></br>
           <TextField
             required
-            id="outlined-required"
+            id="message"
             label="Message"
-            // defaultValue=""
-            value={this.state.message}
-            onChange={this.handleMessageInput}
+            onChange={this.handleChange}
             variant="outlined"
+            name="entry.834565993"
           />
           <br></br>
           <button
             className="btn btn-large right"
-            onClick={this.logInfo}
+            type="submit"
           >
             SUBMIT
           </button>
