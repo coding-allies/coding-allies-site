@@ -1,30 +1,36 @@
 import {
   Link
 } from "react-router-dom";
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Container, Toolbar } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import logo from "../assets/ca_logo.png"
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
     ul: {
-      margin: 0,
-      padding: 0,
-      listStyle: 'none',
+      position: 'absolute',
+      width: '1520px',
+      height: '180px',
+      left: '0px',
+      top: '0px',
+      background: '#FFFFFF'
     },
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
+    alignItems:'center',
+    display:'flex',
+    justifyContent: 'space-between'
   },
   toolbar: {
     flexWrap: 'wrap',
   },
   logo: {
-    width: '80px',
+    width: '100px',
     flexGrow: 1,
   },
   link: {
-    margin: theme.spacing(1, 1.5),
+    margin: theme.spacing(1, 4.5),
     color: theme.palette.primary.main,
   }
 }));

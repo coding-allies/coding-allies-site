@@ -1,13 +1,53 @@
 import React, { Component } from 'react';
-import { Box } from '@material-ui/core';
+import { Box, Container, Grid, Button, Typography, Paper } from '@material-ui/core';
+import whiteBackground from "../assets/MainPageImage.png"
+import {
+  Link
+} from "react-router-dom";
+import HomeCard from '../components/HomeCard';
 
+const styles = {
+  paperContainer: {
+      backgroundImage: `url(${whiteBackground})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      width: `calc(100vw + 48px)`,
+      height:`calc(40vw + 48px)`
+  }
+};
 class Home extends Component {
   render() {
     return (
-      <Box>
-        <h5>Home</h5>
-        <p>HOME PAGE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </Box>
+      <Grid>
+        <div>
+        <Paper style={styles.paperContainer}>
+          <Grid justify="center">
+            <Grid container item xs={6} justify="center" direction="column" alignItems="center">
+            <Typography variant="h3">
+                Women and gender<br/>minorities in tech.<br/>
+                Empower. Prepare. <br/>Advance. Share.
+              </Typography>
+              <Button href="jointoday" variant="contained" color="primary">
+                Join Today
+              </Button>
+            </Grid>
+            </Grid>
+            </Paper>
+          </div>
+        <Grid container item xs={12} justify="center">
+            <Typography variant="h4">
+              We believe women and gender minorities should have a safe space and<br/>
+              support system where they can foster their skills and careers in tech. We<br/>
+              celebrate allyship and a community that is based on helping each other grow<br/>
+              and succeed.
+            </Typography>
+        </Grid>
+        <Grid container item xs={12} justify="center">
+            <HomeCard/>
+            <HomeCard/>
+            <HomeCard/>
+        </Grid>
+      </Grid>
     );
   }
 }

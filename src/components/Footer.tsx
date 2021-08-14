@@ -1,16 +1,13 @@
-import { Grid, Container, Typography, Link } from '@material-ui/core';
+import { Grid, Container, Typography, Link, AppBar, Box } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	footer: {
-		borderTop: `1px solid ${theme.palette.divider}`,
-		marginTop: theme.spacing(8),
 		paddingTop: theme.spacing(3),
-		paddingBottom: theme.spacing(3),
-		position: 'absolute',
+		position: 'relative',
 		left: 0,
 		bottom: 0,
-		height: '100px',
+		height: '80px',
 		width: '100%',
 	},
 }));
@@ -18,14 +15,14 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
 	const classes = useStyles();
 	return (
-		<Container component="footer" className={classes.footer}>
+		<Box component="footer" color="default" className={classes.footer}>
 			<Grid container spacing={2}>
-				<Grid item xs={8}>
+				<Grid item xs={6} style={{marginLeft:'2%'}}>
 					<Typography variant="h6" gutterBottom>
 						CODING ALLIES TM
 				</Typography>
 				</Grid>
-				<Grid item xs={2}>
+				<Grid item xs={3}>
 					<Link href="#" variant="subtitle1">
 						Facebook
 				</Link>
@@ -36,7 +33,7 @@ const Footer = () => {
 				</Link>
 				</Grid>
 			</Grid>
-		</Container>
+		</Box>
 	);
 }
 
