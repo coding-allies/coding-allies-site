@@ -6,13 +6,13 @@ import Footer from './components/Footer';
 class Layout extends Component {
   render() {
     return (
-      <div>
+      <Grid container direction="row" justify="center" alignItems="center">
         <Header />
         <div>
           {this.props.children}
         </div>
         <Footer />
-      </div>
+      </Grid>
     );
   }
 }
