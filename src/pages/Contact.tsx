@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Box, TextField, MenuItem } from '@material-ui/core';
 import axios from 'axios';
 import './Contact.css';
-// install axios and query-string
+// install axios and query-string and python-dotenv (0.19.0)
 
 class Contact extends Component {
 
@@ -25,32 +25,29 @@ class Contact extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  myRequest = (url:any) => {
+  formSubmitRequest = (url:any) => {
     let response;
     try {
-      response = axios.post(url)
+      response = axios.post(url);
     } catch (e) {
       response = e;
+      console.error(e);
     }
-    console.log(response)
   }
 
   handleSubmit = (e:any) => {
     const data = {
       ...this.state
     }
-    console.log(data)
-    const id = "1FAIpQLScb6beAenKEkxKCOX8nlOX1VkB3moEFN7COcmGASIQIKEpFpg";
     e.preventDefault();
-    const formUrl = "https://docs.google.com/forms/d/e/"+id+"/formResponse";
+    const formUrl = "https://docs.google.com/forms/d/e/"+process.env.REACT_APP_FORM_ID+"/formResponse";
     const queryString = require('query-string')
     const q = queryString.stringifyUrl({
       url: formUrl,
       query: data
     })
-    console.log(q)
-    this.myRequest(q)
-    e.target.reset()
+    this.formSubmitRequest(q);
+    e.target.reset();
   };
 
   render() {
