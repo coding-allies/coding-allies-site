@@ -1,43 +1,160 @@
-import { Grid, Container, Typography, Link } from '@material-ui/core';
+import { Button, Grid, Container, Typography, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
+import logo from "../assets/ca_single_flower_logo.png";
+import { withStyles } from "@material-ui/core/styles";
+import InputBase from "@material-ui/core/InputBase";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles((theme) => ({
-	footer: {
-		borderTop: `1px solid ${theme.palette.divider}`,
-		marginTop: theme.spacing(8),
-		paddingTop: theme.spacing(3),
-		paddingBottom: theme.spacing(3),
-		position: 'absolute',
-		left: 0,
-		bottom: 0,
-		height: '100px',
-		width: '100%',
-	},
+  footer: {
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    position: "absolute",
+    left: 0,
+    bottom: 0,
+    height: "100px",
+    width: "100%",
+  },
 }));
 
-const Footer = () => {
-	const classes = useStyles();
-	return (
-		<Container component="footer" className={classes.footer}>
-			<Grid container spacing={2}>
-				<Grid item xs={8}>
-					<Typography variant="h6" gutterBottom>
-						CODING ALLIES TM
-				</Typography>
-				</Grid>
-				<Grid item xs={2}>
-					<Link href="#" variant="subtitle1">
-						Facebook
-				</Link>
-				</Grid>
-				<Grid item xs={2}>
-					<Link href="#" variant="subtitle1">
-						Insta
-				</Link>
-				</Grid>
-			</Grid>
-		</Container>
-	);
+const BootstrapInput = withStyles((theme) => ({
+  root: {
+    "label + &": {
+      marginTop: theme.spacing(3),
+    },
+  },
+  input: {
+    borderRadius: 20,
+    position: "relative",
+    backgroundColor: theme.palette.common.white,
+    border: "1px solid #ced4da",
+    fontSize: 16,
+    width: "auto",
+    padding: "10px 12px",
+    transition: theme.transitions.create(["border-color", "box-shadow"]),
+    "&:focus": {
+      borderColor: theme.palette.primary.main,
+    },
+  },
+}))(InputBase);
+
+function Footer() {
+  const classes = useStyles();
+  return (
+    <Container component="footer" className={classes.footer}>
+      <Grid
+        container
+        spacing={2}
+        alignContent="center"
+        alignItems="center"
+        justify="center"
+      >
+        <Grid item xs={4}>
+          <text>Sign up for event updates</text>
+          <div>
+            <form noValidate>
+              <FormControl>
+                <BootstrapInput
+                  defaultValue="react-bootstrap"
+                  id="bootstrap-input"
+                />
+              </FormControl>
+            </form>
+            <Button
+              href="#"
+              size="small"
+              variant="contained"
+              color="primary"
+              style={{
+                fontSize: 10,
+                textTransform: "none",
+                borderRadius: 15,
+                padding: "2px 15px",
+                marginLeft: 10,
+              }}
+            >
+              Sign up
+            </Button>
+          </div>
+        </Grid>
+        <Grid
+          container
+          item
+          xs={4}
+          direction="column"
+          alignItems="center"
+          justify="center"
+        >
+          <img src={logo} width={45} alt="Coding Allies Logo" />
+          <Typography align="center">
+            &copy; Coding Allies {new Date().getFullYear()}
+            {"."}
+          </Typography>
+        </Grid>
+        <Grid
+          container
+          item
+          xs={4}
+          direction="row"
+          alignItems="center"
+          justify="center"
+        >
+          <text>Follow us on:</text>
+          <Link href="https://www.facebook.com/groups/713361402552708">
+            <FacebookIcon
+              style={{
+                padding: "3px",
+                border: "solid 1px",
+                borderRadius: "50%",
+                marginInline: 5,
+                fill: "primary",
+              }}
+            />
+          </Link>
+          <Link href="https://twitter.com/codingallies?lang=en">
+            <TwitterIcon
+              style={{
+                padding: "3px",
+                border: "solid 1px",
+                borderRadius: "50%",
+                marginInline: 5,
+                fill: "primary",
+              }}
+            />
+          </Link>
+          <Link href="https://www.instagram.com/codingallies/">
+            <InstagramIcon
+              style={{
+                padding: "3px",
+                border: "solid 1px",
+                borderRadius: "50%",
+                marginInline: 5,
+                fill: "primary",
+              }}
+            />
+          </Link>
+          <Link href="https://www.linkedin.com/company/coding-allies/">
+            <LinkedInIcon
+              style={{
+                padding: "3px",
+                border: "solid 1px",
+                borderRadius: "50%",
+                marginInline: 5,
+                fill: "primary",
+              }}
+            />
+          </Link>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 }
 
 export default Footer;
