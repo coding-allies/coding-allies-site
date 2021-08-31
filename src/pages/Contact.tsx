@@ -18,6 +18,16 @@ const styles = (theme: Theme) => createStyles({
     color:"black",
     margin: 0
   },
+  formContent: {
+    '&::after': {
+      content: '""',
+      clear: "both",
+      height: 0,
+      width: 0,
+      display: "block",
+      fontSize: 0,
+    }
+  },
   inputField: {
     margin: "10px 5px",
     width: "calc(100% - 10px)",
@@ -39,12 +49,13 @@ const styles = (theme: Theme) => createStyles({
     textTransform: "none",
     borderRadius: 40,
     padding: "8px 25px",
-    marginLeft: 10,
+    margin: "10px 5px",
     display: "inline-block",
     backgroundColor: theme.palette.primary.main,
     boxShadow: "none",
     color: "white",
     border: 0,
+    float: "right",
   }
 });
 
@@ -102,7 +113,7 @@ class Contact extends Component<Props> {
         <div className={classes.hilightTextContainer}>
         <p className={classes.hilightText}>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
         </div>
-        <form onSubmit={this.handleSubmit}>
+        <form className={classes.formContent} onSubmit={this.handleSubmit}>
           <TextField
             select
             fullWidth
