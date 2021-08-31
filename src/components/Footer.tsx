@@ -13,30 +13,44 @@ import FormControl from "@material-ui/core/FormControl";
 const useStyles = makeStyles((theme) => ({
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    position: "absolute",
-    left: 0,
-    bottom: 0,
-    height: "100px",
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
+    minHeight: "100px",
     width: "100%",
   },
+
+  text: {
+    display: "block",
+    textAlign: "left",
+    fontSize: 18,
+    fontWeight: 200,
+    margin: "0 auto 6px",
+  }
 }));
+
+const SubscribeFormControl = withStyles((theme) => ({
+  root: {
+    display: "inline-block",
+  }
+}))(FormControl);
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
+    display: "inline-block",
     "label + &": {
       marginTop: theme.spacing(3),
     },
   },
   input: {
-    borderRadius: 20,
+    display: "inline-block",
+    fontSize: 15,
+    borderRadius: 50,
     position: "relative",
     backgroundColor: theme.palette.common.white,
     border: "1px solid #ced4da",
-    fontSize: 16,
     width: "auto",
+    height: 40,
+    boxSizing: "border-box",
     padding: "10px 12px",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     "&:focus": {
@@ -57,32 +71,32 @@ function Footer() {
         justify="center"
       >
         <Grid item xs={4}>
-          <text>Sign up for event updates</text>
-          <div>
+          <p className={classes.text}>Sign up for event updates</p>
             <form noValidate>
-              <FormControl>
+              <SubscribeFormControl>
                 <BootstrapInput
-                  defaultValue="react-bootstrap"
+                  defaultValue="Email"
                   id="bootstrap-input"
                 />
-              </FormControl>
+                <Button
+                  href="#"
+                  size="small"
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    fontSize: 15,
+                    height: 40,
+                    textTransform: "none",
+                    borderRadius: 40,
+                    padding: "8px 25px",
+                    marginLeft: 10,
+                    display: "inline-block",
+                  }}
+                >
+                  Sign up
+                </Button>{" "}
+              </SubscribeFormControl>
             </form>
-            <Button
-              href="#"
-              size="small"
-              variant="contained"
-              color="primary"
-              style={{
-                fontSize: 10,
-                textTransform: "none",
-                borderRadius: 15,
-                padding: "2px 15px",
-                marginLeft: 10,
-              }}
-            >
-              Sign up
-            </Button>
-          </div>
         </Grid>
         <Grid
           container
