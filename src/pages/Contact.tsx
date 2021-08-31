@@ -8,26 +8,48 @@ import './Contact.css';
 
 // Styling Starts
 const styles = (theme: Theme) => createStyles({
-  root: {
-    backgroundColor: "red"
+  hilightTextContainer: {
+    backgroundColor: theme.palette.primary.light,
+    borderRadius: 10,
+    padding: 10,
+    margin: "10px 0 20px",
   },
   hilightText: {
-    color: "red"
+    color:"black",
+    margin: 0
   },
   inputField: {
     margin: "10px 5px",
     width: "calc(100% - 10px)",
+    '& .MuiInputBase-root': {
+      borderRadius: 20,
+    },
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'black',
+      borderWidth: 2,
+    },
   },
   halfCol: {
     display: "inline-block",
     width: "50%",
+  },
+  sumbitButton: {
+    fontSize: 15,
+    height: 40,
+    textTransform: "none",
+    borderRadius: 40,
+    padding: "8px 25px",
+    marginLeft: 10,
+    display: "inline-block",
+    backgroundColor: theme.palette.primary.main,
+    boxShadow: "none",
+    color: "white",
+    border: 0,
   }
 });
 
 interface Props extends WithStyles<typeof styles>{ }
 class Contact extends Component<Props> {
-
-
   topics = [
     {
       value: 'Volunteering',
@@ -75,10 +97,11 @@ class Contact extends Component<Props> {
   render() {
     const { classes } = this.props;
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth="sm">
         <h1>Contact Us</h1>
+        <div className={classes.hilightTextContainer}>
         <p className={classes.hilightText}>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
-        <Container maxWidth="sm">
+        </div>
         <form onSubmit={this.handleSubmit}>
           <TextField
             select
@@ -147,13 +170,12 @@ class Contact extends Component<Props> {
           />
           <br></br>
           <button
-            className="btn btn-large right"
+            className={classes.sumbitButton}
             type="submit"
           >
             SUBMIT
           </button>
         </form>
-        </Container>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"</p>
       </Container>
     );
