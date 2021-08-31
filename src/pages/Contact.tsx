@@ -1,10 +1,24 @@
-import React, { Component } from 'react';
-import { Box, TextField, MenuItem } from '@material-ui/core';
+import { Component } from 'react';
 import axios from 'axios';
+import { Box, TextField, MenuItem } from '@material-ui/core';
+import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import './Contact.css';
 // install axios and query-string and python-dotenv (0.19.0)
 
-class Contact extends Component {
+// Styling Starts
+const styles = (theme: Theme) => createStyles({
+  root: {
+    backgroundColor: "red"
+  },
+  hilightText: {
+    color: "red"
+  }
+});
+
+interface Props extends WithStyles<typeof styles>{ }
+class Contact extends Component<Props> {
+
 
   topics = [
     {
@@ -51,10 +65,11 @@ class Contact extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
       <Box>
         <h1>Contact Us</h1>
-        <p>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
+        <p className={classes.hilightText}>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
         <form onSubmit={this.handleSubmit}>
           <TextField
             id="topic"
@@ -119,4 +134,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default withStyles(styles)(Contact);
