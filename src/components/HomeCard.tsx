@@ -9,11 +9,11 @@ const useStyles = makeStyles((theme) => ({
 	media: {
 		height: 0,
 		paddingTop: '56.25%', // 16:9,
-		marginTop:'30'
+		marginTop:'10'
 	  },
 	  homeCard: {
 		width:`calc(20vw)`,
-		marginLeft: '10px',
+		margin: '50px',
 		alignItems: 'center'
 	  }
 }));

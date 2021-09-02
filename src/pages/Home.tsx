@@ -13,28 +13,34 @@ const styles = {
       backgroundPosition: 'center',
       width: `calc(100vw + 48px)`,
       height:`calc(40vw + 48px)`
+  },
+  mainGrid:{
+    marginTop:'100px'
   }
 };
 class Home extends Component {
   render() {
+    const handleClick = () => {
+      window.open("https://www.facebook.com/groups/codingallies");
+    };
     return (
       <Grid>
         <div>
         <Paper style={styles.paperContainer}>
-          <Grid justify="center">
-            <Grid container item xs={6} justify="center" direction="column" alignItems="center">
-            <Typography variant="h3">
+          <Grid>
+            <Grid container item xs={6} direction="column" alignItems="center">
+            <Typography variant="h3" style={styles.mainGrid}>
                 Women and gender<br/>minorities in tech.<br/>
                 Empower. Prepare. <br/>Advance. Share.
               </Typography>
-              <Button href="jointoday" variant="contained" color="primary">
+              <Button onClick={handleClick} href="jointoday" variant="contained" color="primary">
                 Join Today
               </Button>
             </Grid>
-            </Grid>
-            </Paper>
+          </Grid>
+        </Paper>
           </div>
-        <Grid container item xs={12} justify="center">
+        <Grid container item xs={12} justify="center" style={styles.mainGrid}>
             <Typography variant="h4">
               We believe women and gender minorities should have a safe space and<br/>
               support system where they can foster their skills and careers in tech. We<br/>
