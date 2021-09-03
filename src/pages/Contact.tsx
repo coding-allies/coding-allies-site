@@ -8,13 +8,13 @@ import './Contact.css';
 
 // Styling Starts
 const styles = (theme: Theme) => createStyles({
-  hilightTextContainer: {
+  highlightTextContainer: {
     backgroundColor: theme.palette.primary.light,
     borderRadius: 10,
     padding: 10,
     margin: "10px 0 20px",
   },
-  hilightText: {
+  highlightText: {
     color:"black",
     margin: 0
   },
@@ -43,7 +43,7 @@ const styles = (theme: Theme) => createStyles({
     display: "inline-block",
     width: "50%",
   },
-  sumbitButton: {
+  submitButton: {
     fontSize: 15,
     height: 40,
     textTransform: "none",
@@ -59,7 +59,7 @@ const styles = (theme: Theme) => createStyles({
   }
 });
 
-interface Props extends WithStyles<typeof styles>{ }
+interface Props extends WithStyles<typeof styles>{ };
 class Contact extends Component<Props> {
   topics = [
     {
@@ -110,8 +110,8 @@ class Contact extends Component<Props> {
     return (
       <Container maxWidth="sm">
         <h1>Contact Us</h1>
-        <div className={classes.hilightTextContainer}>
-        <p className={classes.hilightText}>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
+        <div className={classes.highlightTextContainer}>
+        <p className={classes.highlightText}>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
         </div>
         <form className={classes.formContent} onSubmit={this.handleSubmit}>
           <TextField
@@ -181,7 +181,7 @@ class Contact extends Component<Props> {
           />
           <br></br>
           <button
-            className={classes.sumbitButton}
+            className={classes.submitButton}
             type="submit"
           >
             SUBMIT
