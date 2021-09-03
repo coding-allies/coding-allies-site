@@ -1,11 +1,66 @@
-import React, { Component } from 'react';
-import { Box, TextField, MenuItem } from '@material-ui/core';
+import { Component } from 'react';
 import axios from 'axios';
+import { Box, TextField, MenuItem, Container } from '@material-ui/core';
+import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import './Contact.css';
 // install axios and query-string and python-dotenv (0.19.0)
 
-class Contact extends Component {
+// Styling Starts
+const styles = (theme: Theme) => createStyles({
+  highlightTextContainer: {
+    backgroundColor: theme.palette.primary.light,
+    borderRadius: 10,
+    padding: 10,
+    margin: "10px 0 20px",
+  },
+  highlightText: {
+    color:"black",
+    margin: 0
+  },
+  formContent: {
+    '&::after': {
+      content: '""',
+      clear: "both",
+      height: 0,
+      width: 0,
+      display: "block",
+      fontSize: 0,
+    }
+  },
+  inputField: {
+    margin: "10px 5px",
+    width: "calc(100% - 10px)",
+    '& .MuiInputBase-root': {
+      borderRadius: 20,
+    },
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'black',
+      borderWidth: 2,
+    },
+  },
+  halfCol: {
+    display: "inline-block",
+    width: "50%",
+  },
+  submitButton: {
+    fontSize: 15,
+    height: 40,
+    textTransform: "none",
+    borderRadius: 40,
+    padding: "8px 25px",
+    margin: "10px 5px",
+    display: "inline-block",
+    backgroundColor: theme.palette.primary.main,
+    boxShadow: "none",
+    color: "white",
+    border: 0,
+    float: "right",
+  }
+});
 
+interface Props extends WithStyles<typeof styles>{ };
+class Contact extends Component<Props> {
   topics = [
     {
       value: 'Volunteering',
@@ -51,18 +106,24 @@ class Contact extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
-      <Box>
+      <Container maxWidth="sm">
         <h1>Contact Us</h1>
-        <p>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
-        <form onSubmit={this.handleSubmit}>
+        <div className={classes.highlightTextContainer}>
+        <p className={classes.highlightText}>Please use this form to contact us. Alternatively, feel free to send us an email at admin@codingallies.org.</p>
+        </div>
+        <form className={classes.formContent} onSubmit={this.handleSubmit}>
           <TextField
-            id="topic"
             select
-            label="Select"
+            fullWidth
+            id="topic"
+            label="Topic"
+            defaultValue="Select"
             onChange={this.handleChange}
-            variant="outlined"
             name="entry.1519230818"
+            variant="outlined"
+            className={classes.inputField}
           >
             {this.topics.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -70,53 +131,66 @@ class Contact extends Component {
               </MenuItem>
             ))}
           </TextField>
-          <br></br>
-          <TextField
-            required
-            id="firstName"
-            label="First Name"
-            onChange={this.handleChange}
-            variant="outlined"
-            name="entry.1466030423"
-          />
+          <Box className={classes.halfCol}>
+            <TextField
+              required
+              id="firstName"
+              label="First Name"
+              defaultValue="&nbsp;"
+              onChange={this.handleChange}
+              name="entry.1466030423"
+              variant="outlined"
+              className={classes.inputField}
+            />
+          </Box>
+          <Box className={classes.halfCol}>
           <TextField
             required
             id="lastName"
             label="Last Name"
+            defaultValue="&nbsp;"
             onChange={this.handleChange}
-            variant="outlined"
             name="entry.363139444"
+            variant="outlined"
+            className={classes.inputField}
           />
-          <br></br>
+          </Box>
           <TextField
             required
+            fullWidth
             id="email"
             label="Email"
+            defaultValue="&nbsp;"
             onChange={this.handleChange}
-            variant="outlined"
             name="entry.1540871534"
+            variant="outlined"
+            className={classes.inputField}
           />
           <br></br>
           <TextField
             required
+            fullWidth
+            multiline
             id="message"
             label="Message"
+            defaultValue="&nbsp;"
             onChange={this.handleChange}
-            variant="outlined"
             name="entry.834565993"
+            variant="outlined"
+            className={classes.inputField}
           />
           <br></br>
           <button
-            className="btn btn-large right"
+            className={classes.submitButton}
             type="submit"
           >
             SUBMIT
           </button>
         </form>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"</p>
-      </Box>
+      </Container>
     );
   }
 }
 
-export default Contact;
+export default withStyles(styles)(Contact);
