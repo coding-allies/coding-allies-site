@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    alignItems:'center',
     display:'flex',
     justifyContent: 'space-between'
   },
@@ -52,7 +51,7 @@ const Header = () => {
         >
           <img src={logo} className={classes.logo} alt="Coding Allies Logo" />
         </Link>
-        <nav>
+        {/* <nav>
           <Link
             to="/about"
             className={classes.link}
@@ -83,7 +82,7 @@ const Header = () => {
           >
             CONTACT US
          </Link>
-        </nav>
+        </nav> */}
       </Toolbar>
     </AppBar>
   );
