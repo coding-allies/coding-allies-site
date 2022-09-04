@@ -4,6 +4,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from "@material-ui/core/styles";
 import cardImage from "../assets/dataStructureAndAlgorithms.png"
+import AlertDialog from './AlertDialog';
 
 const useStyles = makeStyles((theme) => ({
 	media: {
@@ -31,7 +32,9 @@ const DataStructureAndAlgorithms = () => {
               <Typography className={classes.text}>Practice free mock interview with your peers in a beginner-friendly safe environment.</Typography>
 			  </CardContent>
               <CardActions>
-        		<Button size="small">Click</Button>
+			  <Button variant="outlined">
+				<AlertDialog></AlertDialog>
+      		  </Button>
       		  </CardActions>
             </Card>
 	);
