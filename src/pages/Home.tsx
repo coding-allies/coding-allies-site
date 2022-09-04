@@ -4,8 +4,11 @@ import whiteBackground from "../assets/MainPageImage.png"
 import {
   Link
 } from "react-router-dom";
-import HomeCard from '../components/HomeCard';
+import HomeCard from '../components/DataStructureAndAlgorithms';
 import { normalize } from 'path';
+import DataStructureAndAlgorithms from '../components/DataStructureAndAlgorithms';
+import AdvancedDataStructure from '../components/AdvancedDataStructure';
+import CodingAlliesOpenSource from '../components/CodingAlliesOpenSource';
 
 const styles = {
   paperContainer: {
@@ -80,10 +83,10 @@ class Home extends Component {
             </Typography>
           </ThemeProvider>
         </Grid>
-        <Grid container item xs={12} justify="center">
-            <HomeCard/>
-            <HomeCard/>
-            <HomeCard/>
+        <Grid container item xs={12} spacing={2} justify="center">
+            <DataStructureAndAlgorithms/>
+            <AdvancedDataStructure/>
+            <CodingAlliesOpenSource/>
         </Grid>
       </Grid>
     );
