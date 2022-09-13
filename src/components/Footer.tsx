@@ -9,6 +9,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import logo from "../assets/ca_single_flower_logo.png";
 import InputBase from "@material-ui/core/InputBase";
 import FormControl from "@material-ui/core/FormControl";
+// import byLaws from "../assets/by-laws.pdf";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -166,6 +167,14 @@ function Footer() {
             />
           </Link>
         </Grid>
+        {/* <Grid container
+          item
+          xs={4}
+          direction="row"
+          alignItems="center"
+          justify="center">
+            <a href={byLaws}>Download By Laws</a>
+        </Grid> */}
       </Grid>
     </Container>
   );
