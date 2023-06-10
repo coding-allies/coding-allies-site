@@ -32,9 +32,7 @@ const DataStructureAndAlgorithms = () => {
               <Typography className={classes.text}>Practice free mock interview with your peers in a beginner-friendly safe environment.</Typography>
 			  </CardContent>
               <CardActions>
-			  <Button variant="outlined">
-				<AlertDialog></AlertDialog>
-      		  </Button>
+			  <AlertDialog />
       		  </CardActions>
             </Card>
 	);

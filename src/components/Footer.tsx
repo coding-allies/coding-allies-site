@@ -69,7 +69,7 @@ function Footer() {
         spacing={2}
         alignContent="center"
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         <Grid item xs={4}>
           <p className={classes.text}>Sign up for event updates</p>
@@ -105,7 +105,7 @@ function Footer() {
           xs={4}
           direction="column"
           alignItems="center"
-          justify="center"
+          justifyContent="center"
         >
           <img src={logo} width={45} alt="Coding Allies Logo" />
           <Typography align="center">
@@ -119,9 +119,9 @@ function Footer() {
           xs={4}
           direction="row"
           alignItems="center"
-          justify="center"
+          justifyContent="center"
         >
-          <text>Follow us on:</text>
+          <Typography align="center">Follow us on:</Typography>
           <Link href="https://www.facebook.com/groups/713361402552708">
             <FacebookIcon
               style={{
@@ -172,7 +172,7 @@ function Footer() {
           xs={4}
           direction="row"
           alignItems="center"
-          justify="center">
+          justifyContent="center">
             <a href={byLaws}>Download By Laws</a>
         </Grid> */}
       </Grid>

@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { Box, Container, Grid, Button, Typography, Paper, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { Component } from 'react';
+import { Grid, Button, Typography, Paper, ThemeProvider } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles'
 import whiteBackground from "../assets/MainPageImage.png"
-import {
-  Link
-} from "react-router-dom";
-import HomeCard from '../components/DataStructureAndAlgorithms';
-import { normalize } from 'path';
+// import {
+//   Link
+// } from "react-router-dom";
+// import HomeCard from '../components/DataStructureAndAlgorithms';
+// import { normalize } from 'path';
 import DataStructureAndAlgorithms from '../components/DataStructureAndAlgorithms';
 import AdvancedDataStructure from '../components/AdvancedDataStructure';
 import CodingAlliesOpenSource from '../components/CodingAlliesOpenSource';
@@ -30,7 +31,7 @@ const styles = {
   }
 };
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     h4: {
      fontFamily: '"Montserrat"',
@@ -73,7 +74,7 @@ class Home extends Component {
           </Grid>
         </Paper>
           </div>
-        <Grid container item xs={12} justify="center" style={styles.believe}>
+        <Grid container item xs={12} justifyContent="center" style={styles.believe}>
           <ThemeProvider theme={theme}>
             <Typography variant="h5">
               We believe women and gender minorities should have a safe space and
@@ -83,7 +84,7 @@ class Home extends Component {
             </Typography>
           </ThemeProvider>
         </Grid>
-        <Grid container item xs={12} spacing={2} justify="center">
+        <Grid container item xs={12} spacing={2} justifyContent="center">
             <DataStructureAndAlgorithms/>
             <AdvancedDataStructure/>
             <CodingAlliesOpenSource/>
