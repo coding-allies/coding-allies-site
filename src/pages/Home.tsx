@@ -20,14 +20,16 @@ const styles = {
       height:`calc(40vw + 48px)`
   },
   mainGrid:{
-    marginTop:'auto',
-    paddingTop: '100px',
-    paddingLeft: '40px'
+    marginTop:'calc(10vw)',
+    marginBottom:'10px',
+    padding: '10px',
+    backgroundColor:'rgba(255,255,255, 0.5)',
+    borderRadius:'5px',
   },
   believe:{
     marginTop: '40px',
     paddingLeft: '60px',
-    paddingRight: '50px'
+    paddingRight: '50px',
   }
 };
 
@@ -67,8 +69,8 @@ class Home extends Component {
                   Empower. Prepare. <br/>Advance. Share.
               </Typography>
             </ThemeProvider>
-            <Button onClick={handleClick} href="jointoday" variant="contained" color="primary">
-              Join Today
+            <Button onClick={handleClick} href="" variant="contained" color="primary">
+              Join Our FB Group Today
             </Button>
             </Grid>
           </Grid>
