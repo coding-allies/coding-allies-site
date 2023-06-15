@@ -2,14 +2,9 @@ import { Component } from 'react';
 import { Grid, Button, Typography, Paper, ThemeProvider } from '@material-ui/core';
 import { createTheme } from '@material-ui/core/styles'
 import whiteBackground from "../assets/MainPageImage.png"
-// import {
-//   Link
-// } from "react-router-dom";
-// import HomeCard from '../components/DataStructureAndAlgorithms';
-// import { normalize } from 'path';
 import DataStructureAndAlgorithms from '../components/DataStructureAndAlgorithms';
-import AdvancedDataStructure from '../components/AdvancedDataStructure';
 import CodingAlliesOpenSource from '../components/CodingAlliesOpenSource';
+import DiscordCommunity from '../components/DiscordCommunity';
 
 const styles = {
   paperContainer: {
@@ -87,9 +82,10 @@ class Home extends Component {
           </ThemeProvider>
         </Grid>
         <Grid container item xs={12} spacing={2} justifyContent="center">
-            <DataStructureAndAlgorithms/>
-            <AdvancedDataStructure/>
+            <DiscordCommunity />
             <CodingAlliesOpenSource/>
+            <DataStructureAndAlgorithms/>
+            
         </Grid>
       </Grid>
     );

@@ -30,9 +30,9 @@ const CodingAlliesOpenSource = () => {
               <CardMedia className={classes.media} image={cardImage} title="Contemplative Reptile"/>
               <Typography className={classes.text}>New to open source? Want to build Github portfolio? Join our open source community today!</Typography>
 			  </CardContent>
-              <CardActions>
+              {/* <CardActions>
         		<Button  href="https://github.com/coding-allies/coding-allies-site/discussions/19" size="small">Click</Button>
-      		  </CardActions>
+      		  </CardActions> */}
             </Card>
 	);
 }
