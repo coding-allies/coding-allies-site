@@ -1,25 +1,18 @@
 import {
-  Grid,
-  Container,
   Typography,
-  Link,
-  AppBar,
-  Box,
   Button,
   CardMedia,
   CardActionArea,
 } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
-import cardImage from "../assets/dataStructureAndAlgorithms.png";
-import AlertDialog from "./AlertDialog";
+import cardImage from "../assets/community.png";
 
 const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
-    padding: "30.25%", // 16:9,
+    padding: "30.25%",
   },
   homeCard: {
     width: `calc(20vw)`,
@@ -33,13 +26,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DataStructureAndAlgorithms = () => {
+const DiscordCommunity = () => {
   const classes = useStyles();
   const handleLinkClick = () => {
-    window.open(
-      "https://www.facebook.com/groups/codingallies/events",
-      "_blank"
-    );
+    // Discord Invite that won't expire
+    window.open("https://discord.gg/qd9GZhKtdY", "_blank");
   };
 
   return (
@@ -48,12 +39,12 @@ const DataStructureAndAlgorithms = () => {
         <CardMedia
           className={classes.media}
           image={cardImage}
-          title="Contemplative Reptile"
+          title="Community"
         />
         <CardContent>
           <Typography className={classes.text}>
-            Practice free mock interview with your peers in a beginner-friendly
-            safe environment.
+            Become part of our online community on Discord, practice DSA & find
+            our upcoming events.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -61,4 +52,4 @@ const DataStructureAndAlgorithms = () => {
   );
 };
 
-export default DataStructureAndAlgorithms;
+export default DiscordCommunity;

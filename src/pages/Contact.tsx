@@ -1,15 +1,15 @@
 import { Component } from 'react';
 import axios from 'axios';
 import { Box, TextField, MenuItem, Container } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { createStyles, Theme, withStyles, WithStyles } from "@material-ui/core/styles";
+import { createTheme } from '@material-ui/core/styles';
 import './Contact.css';
 // install axios and query-string and python-dotenv (0.19.0)
 
 // Styling Starts
-const styles = (theme: Theme) => createStyles({
+const styles = (createTheme: Theme) => createStyles({
   highlightTextContainer: {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: createTheme.palette.primary.light,
     borderRadius: 10,
     padding: 10,
     margin: "10px 0 20px",
@@ -51,7 +51,7 @@ const styles = (theme: Theme) => createStyles({
     padding: "8px 25px",
     margin: "10px 5px",
     display: "inline-block",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: createTheme.palette.primary.main,
     boxShadow: "none",
     color: "white",
     border: 0,

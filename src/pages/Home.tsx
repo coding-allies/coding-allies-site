@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
-import { Box, Container, Grid, Button, Typography, Paper, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { Component } from 'react';
+import { Grid, Button, Typography, Paper, ThemeProvider } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles'
 import whiteBackground from "../assets/MainPageImage.png"
-import {
-  Link
-} from "react-router-dom";
-import HomeCard from '../components/DataStructureAndAlgorithms';
-import { normalize } from 'path';
 import DataStructureAndAlgorithms from '../components/DataStructureAndAlgorithms';
-import AdvancedDataStructure from '../components/AdvancedDataStructure';
 import CodingAlliesOpenSource from '../components/CodingAlliesOpenSource';
+import DiscordCommunity from '../components/DiscordCommunity';
 
 const styles = {
   paperContainer: {
@@ -19,18 +15,20 @@ const styles = {
       height:`calc(40vw + 48px)`
   },
   mainGrid:{
-    marginTop:'auto',
-    paddingTop: '100px',
-    paddingLeft: '40px'
+    marginTop:'calc(10vw)',
+    marginBottom:'10px',
+    padding: '10px',
+    backgroundColor:'rgba(255,255,255, 0.5)',
+    borderRadius:'5px',
   },
   believe:{
     marginTop: '40px',
     paddingLeft: '60px',
-    paddingRight: '50px'
+    paddingRight: '50px',
   }
 };
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     h4: {
      fontFamily: '"Montserrat"',
@@ -66,14 +64,14 @@ class Home extends Component {
                   Empower. Prepare. <br/>Advance. Share.
               </Typography>
             </ThemeProvider>
-            <Button onClick={handleClick} href="jointoday" variant="contained" color="primary">
-              Join Today
+            <Button onClick={handleClick} href="" variant="contained" color="primary">
+              Join Our FB Group Today
             </Button>
             </Grid>
           </Grid>
         </Paper>
           </div>
-        <Grid container item xs={12} justify="center" style={styles.believe}>
+        <Grid container item xs={12} justifyContent="center" style={styles.believe}>
           <ThemeProvider theme={theme}>
             <Typography variant="h5">
               We believe women and gender minorities should have a safe space and
@@ -83,10 +81,11 @@ class Home extends Component {
             </Typography>
           </ThemeProvider>
         </Grid>
-        <Grid container item xs={12} spacing={2} justify="center">
-            <DataStructureAndAlgorithms/>
-            <AdvancedDataStructure/>
+        <Grid container item xs={12} spacing={2} justifyContent="center">
+            <DiscordCommunity />
             <CodingAlliesOpenSource/>
+            <DataStructureAndAlgorithms/>
+            
         </Grid>
       </Grid>
     );
