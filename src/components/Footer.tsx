@@ -26,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 18,
     fontWeight: 200,
     margin: "0 auto 6px",
-  }
+  },
 }));
 
 const SubscribeFormControl = withStyles((theme) => ({
   root: {
     display: "inline-block",
-  }
+  },
 }))(FormControl);
 
 const BootstrapInput = withStyles((theme) => ({
@@ -72,7 +72,7 @@ function Footer() {
         justifyContent="center"
       >
         <Grid item xs={4}>
-          <p className={classes.text}>Sign up for event updates</p>
+          {/* <p className={classes.text}>Sign up for event updates</p>
             <form noValidate>
               <SubscribeFormControl>
                 <BootstrapInput
@@ -97,7 +97,7 @@ function Footer() {
                   Sign up
                 </Button>{" "}
               </SubscribeFormControl>
-            </form>
+            </form> */}
         </Grid>
         <Grid
           container
@@ -120,6 +120,7 @@ function Footer() {
           direction="row"
           alignItems="center"
           justifyContent="center"
+          style={{ paddingTop: "54px" }}
         >
           <Typography align="center">Follow us on:</Typography>
           <Link href="https://www.facebook.com/groups/713361402552708">
