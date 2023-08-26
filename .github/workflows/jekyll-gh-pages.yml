@@ -33,7 +33,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: /public
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
@@ -49,38 +49,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
-
-name: Override folder
-
-on:
-  push:
-    branches:
-      # NOTE: You may want to limit the trigger branch to be "main" or "master" etc.
-      - '*'
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out
-        uses: actions/checkout@v3
-
-      - name: Generate your content
-        run: echo "Optional placeholder. Put your project's static website generator command here."
-
-      - name: Publish current workdir (which contains generated content) to GitHub Pages
-        uses: rayluo/github-pages-overwriter@v1.3
-
-        with:
-
-          # Optional. Default value "." means the root directory of your project will be published.
-          # You can use whatever directory your project uses, for example "wwwroot".
-          # Such a directory does *not* have to already exist in your repo,
-          # it could be an output directory created dynamically by your static website builder.
-          source-directory: /public
-
-          # Optional. Default value "gh-pages".
-          # It specifies the temporary branch which hosts the static website.
-          # Each build will OVERWRITE this branch.
-          target-branch: gh-pages
