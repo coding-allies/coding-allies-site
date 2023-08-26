@@ -40,11 +40,10 @@ jobs:
         with:
           node-version: ">=6.0.0"
           cache: "npm"
-      - name: npm install, build, and start
+      - name: npm install, build
         run: |
           npm install
           npm run build
-          npm start
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
