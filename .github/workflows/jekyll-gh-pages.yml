@@ -42,7 +42,6 @@ jobs:
           cache: "npm"
       - name: npm install, build
         run: |
-          npm audit fix --force
           npm ci
           npm run build
       - name: Upload artifact
