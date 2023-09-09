@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c8725898.css",
+    "main.js": "/static/js/main.9e330b07.js",
+    "static/media/MainPageImage.png": "/static/media/MainPageImage.219416b77014fe40e3ee.png",
+    "static/media/ca_single_flower_logo.png": "/static/media/ca_single_flower_logo.028bb6637ab748f822a1.png",
+    "static/media/ca_logo.png": "/static/media/ca_logo.048e32ba704ce42655bd.png",
+    "static/media/openSourceProject.png": "/static/media/openSourceProject.7cb28ca2b87f755e4dfb.png",
+    "static/media/dataStructureAndAlgorithms.png": "/static/media/dataStructureAndAlgorithms.8dbd675f5edde8ad32f9.png",
+    "static/media/community.png": "/static/media/community.0073693b9967808c09a4.png",
+    "index.html": "/index.html",
+    "main.c8725898.css.map": "/static/css/main.c8725898.css.map",
+    "main.9e330b07.js.map": "/static/js/main.9e330b07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8725898.css",
+    "static/js/main.9e330b07.js"
+  ]
+}
