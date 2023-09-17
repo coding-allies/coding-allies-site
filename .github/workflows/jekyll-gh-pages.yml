@@ -61,10 +61,19 @@ jobs:
           node-version: ">=6.0.0"
       - run: npm ci
       - run: npm run build
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
         with:
-          target_branch: gh-pages
-          build_dir: build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: production-files
+          path: ./build
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
