@@ -1,5 +1,6 @@
 {
   "name": "ca-site",
+  "homepage": "https://coding-allies.github.io/coding-allies-site/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
