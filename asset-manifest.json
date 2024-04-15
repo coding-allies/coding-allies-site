@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/coding-allies-site/static/css/main.c8725898.css",
-    "main.js": "/coding-allies-site/static/js/main.d933a7be.js",
+    "main.js": "/coding-allies-site/static/js/main.280d826f.js",
     "static/media/MainPageImage.png": "/coding-allies-site/static/media/MainPageImage.219416b77014fe40e3ee.png",
     "static/media/ca_single_flower_logo.png": "/coding-allies-site/static/media/ca_single_flower_logo.028bb6637ab748f822a1.png",
     "static/media/ca_logo.png": "/coding-allies-site/static/media/ca_logo.048e32ba704ce42655bd.png",
@@ -10,10 +10,10 @@
     "static/media/community.png": "/coding-allies-site/static/media/community.0073693b9967808c09a4.png",
     "index.html": "/coding-allies-site/index.html",
     "main.c8725898.css.map": "/coding-allies-site/static/css/main.c8725898.css.map",
-    "main.d933a7be.js.map": "/coding-allies-site/static/js/main.d933a7be.js.map"
+    "main.280d826f.js.map": "/coding-allies-site/static/js/main.280d826f.js.map"
   },
   "entrypoints": [
     "static/css/main.c8725898.css",
-    "static/js/main.d933a7be.js"
+    "static/js/main.280d826f.js"
   ]
 }
